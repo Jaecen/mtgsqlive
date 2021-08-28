@@ -546,7 +546,7 @@ def get_query_from_dict(schema, engine: Engine):
                         + "', '".join(table_data[attribute]["options"])
                         + "');\n"
                     )
-        q += f"CREATE TABLE `{table_name}` (\n"
+        q += f"CREATE TABLE \"{table_name}\" (\n"
         if engine == "postgres":
             q += "    id SERIAL PRIMARY KEY,\n"
         elif engine == "sqlite":
